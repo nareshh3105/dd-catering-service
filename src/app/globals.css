@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --gold: #D4AF37;
+  --gold-light: #F5D060;
+  --gold-dark: #B8960C;
+  --maroon: #800000;
+  --maroon-dark: #5a0000;
+  --maroon-light: #a00000;
+  --cream: #FFFDF5;
+  --dark: #1C0505;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--dark);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fff8e7;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold-dark);
+}
+
+/* Selection */
+::selection {
+  background: var(--gold);
+  color: var(--dark);
+}
+
+@layer utilities {
+  /* Gold shimmer text */
+  .text-gold-shimmer {
+    background: linear-gradient(90deg, #D4AF37 0%, #F5D060 30%, #D4AF37 50%, #B8960C 70%, #D4AF37 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shimmer 3s linear infinite;
+  }
+
+  /* Traditional border pattern */
+  .border-traditional {
+    border-image: linear-gradient(90deg, transparent, #D4AF37, transparent) 1;
+  }
+
+  /* Gold divider */
+  .divider-gold {
+    @apply relative;
+  }
+  .divider-gold::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2 h-0.5 w-24;
+    background: linear-gradient(90deg, transparent, #D4AF37, transparent);
+  }
+
+  /* Backdrop glass */
+  .glass {
+    @apply backdrop-blur-md bg-white/10 border border-white/20;
+  }
+
+  /* Pattern overlay */
+  .pattern-bg {
+    background-image:
+      radial-gradient(circle at 25px 25px, rgba(212,175,55,0.08) 2px, transparent 0),
+      radial-gradient(circle at 75px 75px, rgba(212,175,55,0.08) 2px, transparent 0);
+    background-size: 100px 100px;
+  }
+
+  /* Hover lift */
+  .hover-lift {
+    @apply transition-transform duration-300 hover:-translate-y-2;
+  }
+}
+
+@layer components {
+  .btn-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300;
+    background: linear-gradient(135deg, #D4AF37 0%, #F5D060 50%, #B8960C 100%);
+    color: #1C0505;
+    box-shadow: 0 4px 15px rgba(212,175,55,0.4);
+  }
+  .btn-gold:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212,175,55,0.5);
+  }
+  .btn-gold:active {
+    transform: translateY(0);
+  }
+
+  .btn-maroon {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300;
+    background: linear-gradient(135deg, #800000 0%, #a00000 50%, #5a0000 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(128,0,0,0.4);
+  }
+  .btn-maroon:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(128,0,0,0.5);
+  }
+
+  .btn-outline-gold {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-sm tracking-wide transition-all duration-300 border-2;
+    border-color: #D4AF37;
+    color: #D4AF37;
+    background: transparent;
+  }
+  .btn-outline-gold:hover {
+    background: #D4AF37;
+    color: #1C0505;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212,175,55,0.4);
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24;
+  }
+
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-2xl hover:-translate-y-1;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes pulseGold {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.5); }
+  50% { box-shadow: 0 0 0 18px rgba(212,175,55,0); }
+}
+
+/* Mobile bottom bar spacing */
+@media (max-width: 768px) {
+  .mobile-pb {
+    padding-bottom: 80px;
+  }
+}
