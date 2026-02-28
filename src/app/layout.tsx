@@ -3,6 +3,8 @@ import { Playfair_Display, Inter } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/layout/Navbar'
 import Footer from '@/components/layout/Footer'
+import MobileBar from '@/components/layout/MobileBar'
+import FloatingWhatsApp from '@/components/ui/FloatingWhatsApp'
 import { BUSINESS } from '@/lib/constants'
 
 const playfair = Playfair_Display({
@@ -135,8 +137,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body className="font-inter antialiased bg-cream">
         <Navbar />
-        <main className="min-h-screen">{children}</main>
+        <main className="min-h-screen mobile-pb">{children}</main>
         <Footer />
+        <MobileBar />
+        <FloatingWhatsApp />
       </body>
     </html>
   )
