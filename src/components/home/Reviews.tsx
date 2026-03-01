@@ -30,7 +30,7 @@ export default function Reviews() {
   }
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <SectionHeader
           badge="Google Reviews"

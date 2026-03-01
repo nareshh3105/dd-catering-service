@@ -11,7 +11,7 @@ export default function GalleryPreview() {
   const preview = GALLERY_IMAGES.slice(0, 6)
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-white overflow-hidden">
       <div className="container-custom">
         <SectionHeader
           badge="Our Gallery"

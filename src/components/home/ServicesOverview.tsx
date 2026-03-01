@@ -9,7 +9,7 @@ import SectionHeader from '@/components/shared/SectionHeader'
 
 export default function ServicesOverview() {
   return (
-    <section className="section-padding pattern-bg" style={{ background: 'linear-gradient(180deg, #fff8e7 0%, #FFFDF5 100%)' }}>
+    <section className="section-padding pattern-bg overflow-hidden" style={{ background: 'linear-gradient(180deg, #fff8e7 0%, #FFFDF5 100%)' }}>
       <div className="container-custom">
         <SectionHeader
           badge="What We Offer"
