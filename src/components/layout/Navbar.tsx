@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FaPhone, FaWhatsapp, FaTimes, FaLeaf } from 'react-icons/fa'
+import { FaPhone, FaWhatsapp, FaLeaf } from 'react-icons/fa'
 import { NAV_LINKS, BUSINESS } from '@/lib/constants'
 
 export default function Navbar() {
@@ -128,17 +128,9 @@ export default function Navbar() {
               className="absolute top-0 right-0 bottom-0 w-[280px] max-w-[85vw] flex flex-col"
               style={{ background: 'linear-gradient(180deg, #3a0000 0%, #600000 50%, #3a0000 100%)' }}
             >
-              <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <div>
-                  <p className="font-playfair font-bold text-white text-base">{BUSINESS.name}</p>
-                  <p className="text-gold-400/70 text-xs">{BUSINESS.nameTamil}</p>
-                </div>
-                <button
-                  onClick={() => setIsOpen(false)}
-                  className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white/70"
-                >
-                  <FaTimes className="text-sm" />
-                </button>
+              <div className="p-5 border-b border-white/10">
+                <p className="font-playfair font-bold text-white text-base">{BUSINESS.name}</p>
+                <p className="text-gold-400/70 text-xs">{BUSINESS.nameTamil}</p>
               </div>
 
               <nav className="flex-1 py-4 px-4 space-y-0.5">
